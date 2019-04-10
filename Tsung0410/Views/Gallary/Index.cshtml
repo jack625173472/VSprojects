@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Tsung0410.Models.Photo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>我的畫廊</h2>
+    <table class="table">
+        <tr>
+            <th>
+                圖片號碼
+            </th>
+            <th>
+                圖片標題
+            </th>
+            <th>
+                圖片呈現
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoName)
+            </td>
+            <td>
+                <img src=@item.PhotoUrl width="150" />
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
